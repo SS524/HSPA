@@ -1,0 +1,44 @@
+[{
+  "Id":1,
+  "Type":"House",
+  "SellRent":1,
+  "Price":12000000,
+  "Name":"Birla House",
+  "Image":"prop1"
+
+},
+{
+  "Id":2,
+  "Type":"House",
+  "SellRent":2,
+  "Price":15000000,
+  "Name":"Ambani House",
+  "Image":"prop2"
+},
+{
+  "Id":3,
+  "Type":"Hotel",
+  "SellRent":1,
+  "Price":1200000,
+  "Name":"Taj Hotel",
+  "Image":"prop3"
+
+},
+{
+  "Id":4,
+  "Type":"University",
+  "SellRent":2,
+  "Price":120000,
+  "Name":"Jadavpur University",
+  "Image":"prop4"
+
+},
+{
+  "Id":5,
+  "Type":"House",
+  "SellRent":1,
+  "Price":12000,
+  "Name":"My House"
+
+
+}]
