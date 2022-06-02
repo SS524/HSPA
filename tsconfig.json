@@ -24,7 +24,8 @@
     ],
     "suppressImplicitAnyIndexErrors": true,
     "strictPropertyInitialization":false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "typeRoots": ["src/alertyfytype.d.ts"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
