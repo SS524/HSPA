@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppComponent } from './app.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { PropertyCardComponent } from './property/property-card/property-card.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -17,13 +22,16 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
+import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { SortPipe } from './Pipes/sort.pipe';
 
 
 const appRoutes:Routes=[
   {path:'add-property',component:AddPropertyComponent},
   {path:'',component:PropertyListComponent},
   {path:'rent-property',component:PropertyListComponent},
-  {path:'property-detail/:id',component:PropertyDetailComponent},
+  {path:'property-detail/:id',component:PropertyDetailComponent,resolve: {prp: PropertyDetailResolverService}},
   {path:'user/register',component:UserRegisterComponent},
   {path:'user/login',component:UserLoginComponent}
 
@@ -39,7 +47,9 @@ const appRoutes:Routes=[
       AddPropertyComponent,
       PropertyDetailComponent,
       UserLoginComponent,
-      UserRegisterComponent
+      UserRegisterComponent,
+      FilterPipe,
+      SortPipe
    ],
   imports: [
     BrowserModule,
@@ -49,9 +59,12 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    NgxGalleryModule
   ],
-  providers: [HousingService,UserService,AlertifyService,AuthService],
+  providers: [HousingService,UserService,AlertifyService,AuthService,PropertyDetailResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   height: 250px;
-  width: 250px;
+
   opacity: 0.5;
 }
 
@@ -14,14 +14,12 @@
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   height: 250px;
-  width: 250px;
+
 
 
 }
 .card-image-wrapper{
   overflow: hidden;
-  padding-left: 65px;
-  padding-top: 10px;
   position: relative;
 
 }
@@ -40,4 +38,12 @@
 }
 .animate{
   transition: all 0.3s ease-in-out;
+}
+.card-body h1{
+  font-family: fantasy;
+  color: #0069d9;
+}
+.font-highlight{
+  font-style: italic;
+  color: red;
 }
